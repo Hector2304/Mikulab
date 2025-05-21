@@ -33,7 +33,14 @@ class UsuarioContrasena extends BaseHandler
 
 			$usuarioDTO = new UsuarioDTO;
 			$usuarioDTO->setUsuaIdUsuario($jsonData->id);
-			$usuarioDTO->setUsuaContrasena(password_hash($jsonData->contrasena, PASSWORD_BCRYPT));
+
+// Verifica si la contraseña ya es un hash (bcrypt empieza con $2y$)
+            $contrasena = trim($jsonData->contrasena);
+            if (!preg_match('/^\$2y\$/', $contrasena)) {
+                $contrasena = password_hash($contrasena, PASSWORD_BCRYPT);
+            }
+
+            $usuarioDTO->setUsuaContrasena($contrasena);
 
 			$usuarioDAO->setContrasena($usuarioDTO);
 

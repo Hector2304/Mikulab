@@ -82,7 +82,11 @@ class Sesion extends BaseHandler
 						exit;
 					}
 
-				if ($usuarioDTO->getUsuaStatus() == 'A' && $jsonData->contrasena === $usuarioDTO->getUsuaContrasena()) {
+                    if (
+                        $usuarioDTO->getUsuaStatus() == 'A' &&
+                        password_verify($jsonData->contrasena, $usuarioDTO->getUsuaContrasena())
+                    )
+                    {
 						error_log("===> Contraseña válida. Usuario activo.");
 						$usuarioSesionDTO = new UsuarioSesionDTO;
 						$usuarioSesionDTO->setObjetoUsuario($usuarioDTO);
