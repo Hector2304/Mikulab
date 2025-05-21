@@ -103,9 +103,11 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
 			$stmt = $conn->prepare(
 				"SELECT * FROM " . $this->tablaReservacion .
 					" JOIN horario h ON " . $this->tablaReservacion . "." . $this->colReseIdHorario . " = h.hora_id_horario " .
-					" WHERE "  . $this->colReseReservadoPor . " = :id_profesor" .
-					" ORDER BY " . $this->colReseFecha . " DESC"
-			);
+                " WHERE "  . $this->colReseReservadoPor . " = :id_profesor" .
+                " AND " . $this->colReseStatus . " = 'A'" .
+                " ORDER BY " . $this->colReseFecha . " DESC"
+
+            );
 
 			$stmt->bindParam(":id_profesor", $idProfesor, PDO::PARAM_STR);
 
@@ -316,11 +318,12 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
 
 			$conn = $this->conexion->getConexion();
 
-			$stmt = $conn->prepare("SELECT r.*, h.*
-				FROM reservacion r
-				JOIN horario h ON r.rese_id_horario = h.hora_id_horario
-				WHERE r.rese_id_laboratorio IN (" . $in . ")
-				AND r.rese_fecha = ?");
+            $stmt = $conn->prepare("SELECT r.*, h.*
+            FROM reservacion r
+            JOIN horario h ON r.rese_id_horario = h.hora_id_horario
+            WHERE r.rese_id_laboratorio IN (" . $in . ")
+            AND r.rese_fecha = ?
+            AND r.rese_status = 'A'");
 
 			$param = 0;
 
