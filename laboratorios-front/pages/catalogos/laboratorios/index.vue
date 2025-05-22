@@ -6,16 +6,18 @@
 		<CatalogosListado :busy="labLoading" :campos="labCampos" :listado="labListado">
 			<template v-slot:actions="{ item }">
 				<div style="min-width: 120px">
-					<b-button
-						variant="outline-primary"
-						class="border-0"
-						size="sm"
-						@click="abrirHorarios(item)"
-						v-b-tooltip.hover.top.ds300
-						title="Horarios bloqueados"
-						><b-icon icon="clock-history"></b-icon
-					></b-button>
-					<b-button
+          <b-button
+            variant="outline-danger"
+            class="border-0"
+            size="sm"
+            @click="abrirHorarios(item)"
+            v-b-tooltip.hover.top.ds300
+            title="Horarios bloqueados"
+          >
+            <b-icon icon="shield-lock"></b-icon>
+          </b-button>
+
+          <b-button
 						variant="outline-primary"
 						class="border-0"
 						size="sm"
