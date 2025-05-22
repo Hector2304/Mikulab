@@ -9,28 +9,37 @@
 				<span class="ml-1 ml-sm-4">{{ horariosSelectedLab.saloUbicacion }}</span>
 			</div>
 			<div class="d-flex flex-row justify-content-center border-bottom">
-				<b-form-datepicker
-					placeholder="Seleccionar semana..."
-					v-model="weekDate"
-					v-bind="$options.CalendarLabels['es-MX']"
-					:disabled="loading"
-					:start-weekday="1"
-					locale="es-MX"
-					size="sm"
-					@input="loadBloqueo"
-					:date-disabled-fn="dateDisabled"
-					:date-info-fn="highlightWeek"
-					button-variant="outline"
-					button-only
-					hide-header
-				></b-form-datepicker>
-				<div class="p-2">
+        <b-form-datepicker
+          placeholder="Seleccionar semana..."
+          v-model="weekDate"
+          v-bind="$options.CalendarLabels['es-MX']"
+          :disabled="loading"
+          :start-weekday="1"
+          locale="es-MX"
+          size="sm"
+          @input="loadBloqueo"
+          :date-disabled-fn="dateDisabled"
+          :date-info-fn="highlightWeek"
+          button-variant="outline"
+          button-only
+          hide-header
+          class="border border-primary rounded shadow-sm"
+        />
+
+        <div class="p-2">
 					<span class="text-primary">Semana</span>
 					<span class="ml-1 ml-sm-4">{{ semana }}</span>
 				</div>
 			</div>
 
-			<div v-if="loading" class="d-flex p-4 justify-content-center align-items-center">
+
+      <div v-if="!weekDate && !loading" class="text-center text-muted py-3">
+        <b-icon icon="info-circle-fill" variant="primary" class="mr-2"></b-icon>
+        <span>Por favor selecciona una semana en el calendario para comenzar el bloqueo de horarios.</span>
+      </div>
+
+
+      <div v-if="loading" class="d-flex p-4 justify-content-center align-items-center">
 				<b-spinner variant="primary"></b-spinner>
 			</div>
 			<SchedulerWeek
