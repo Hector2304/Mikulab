@@ -14,15 +14,16 @@
 			</template>
 
 			<template v-slot:top-buttons>
-				<b-button
-					variant="outline-primary"
-					size="sm"
-					class="ml-3"
-					@click="$router.push('/catalogos/laboratorios/horarios-bloq/bloquear')"
-				>
-					<b-icon icon="plus"></b-icon> Bloquear
-				</b-button>
-			</template>
+        <b-button
+          variant="primary"
+          size="sm"
+          class="ml-3 font-weight-bold rounded-pill shadow-sm px-3"
+          @click="$router.push('/catalogos/laboratorios/horarios-bloq/bloquear')"
+        >
+          <b-icon icon="plus" font-scale="1.1"></b-icon> Bloquear
+        </b-button>
+
+      </template>
 
 			<template v-slot:actions="{ item }">
 				<div style="min-width: 120px">
