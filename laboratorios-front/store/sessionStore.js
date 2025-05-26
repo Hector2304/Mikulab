@@ -46,9 +46,11 @@ export const actions = {
 				commit('DO_REDIRECT', '/tecnico');
 			} else if (response.data.userType === 'SERVIDOR_SOCIAL') {
 				commit('DO_REDIRECT', '/servidor-social');
-			}
+			}  else if (response.data.userType === 'VIGILANTE') {
+        commit('DO_REDIRECT', '/tecnico');
+    }
 
-			return response;
+    return response;
 		});
 	},
 
@@ -72,8 +74,9 @@ export const actions = {
 					commit('DO_REDIRECT', '/tecnico');
 				} else if (response.data.userType === 'SERVIDOR_SOCIAL') {
 					commit('DO_REDIRECT', '/servidor-social');
-				}
-
+				} else if (response.data.userType === 'VIGILANTE') {
+          commit('DO_REDIRECT', '/tecnico');
+        }
 				return response;
 			})
 			.catch((error) => {
