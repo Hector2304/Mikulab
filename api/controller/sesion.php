@@ -76,12 +76,6 @@ class Sesion extends BaseHandler
 				if ($usuarioDTO != null) {
 					error_log("===> Tipo usuario: " . $usuarioDTO->getTiusNombre());
 
-					if ($usuarioDTO->getTiusNombre() == TipoUsuarioEnum::VIGILANTE) {
-						error_log("===> Usuario es VIGILANTE. Acceso denegado.");
-						RestCommons::respondWithStatus(401);
-						exit;
-					}
-
                     if (
                         $usuarioDTO->getUsuaStatus() == 'A' &&
                         password_verify($jsonData->contrasena, $usuarioDTO->getUsuaContrasena())
