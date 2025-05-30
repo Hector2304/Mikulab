@@ -73,5 +73,5 @@ class ReportesProgramadoSemanaExcel extends BaseHandler
 	}
 }
 
-(new RESTEndpointClient(array('POST'), array(TipoUsuarioEnum::SUPERUSUARIO, TipoUsuarioEnum::TECNICO, TipoUsuarioEnum::SERVIDOR_SOCIAL, TipoUsuarioEnum::VIGILANTE)))
+(new RESTEndpointClient(array('POST'), array(TipoUsuarioEnum::SUPERUSUARIO, TipoUsuarioEnum::TECNICO, TipoUsuarioEnum::SERVIDOR_SOCIAL)))
 	->execute(new ReportesProgramadoSemanaExcel);

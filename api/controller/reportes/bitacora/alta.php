@@ -83,5 +83,5 @@ class ReportesBitacoraAlta extends BaseHandler
 	}
 }
 
-(new RESTEndpointClient(array('POST'), array(TipoUsuarioEnum::SUPERUSUARIO, TipoUsuarioEnum::TECNICO)))
+(new RESTEndpointClient(array('POST'), array(TipoUsuarioEnum::SUPERUSUARIO, TipoUsuarioEnum::TECNICO,TipoUsuarioEnum::VIGILANTE)))
 	->execute(new ReportesBitacoraAlta);

@@ -3116,3 +3116,290 @@ Stack trace:
 [20-May-2025 22:13:53 Europe/Berlin] ===> ProfesorDAO instanciado
 [20-May-2025 22:13:53 Europe/Berlin] ===> Profesor encontrado: sí
 [20-May-2025 22:13:53 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[23-May-2025 22:00:22 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:00:22 Europe/Berlin] ===> Método POST detectado
+[23-May-2025 22:00:22 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[23-May-2025 22:00:22 Europe/Berlin] ===> UsuarioDAO instanciado
+[23-May-2025 22:00:22 Europe/Berlin] ===> Usuario encontrado: sí
+[23-May-2025 22:00:22 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[23-May-2025 22:00:22 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[23-May-2025 22:00:48 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:00:48 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[23-May-2025 22:00:55 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:00:55 Europe/Berlin] ===> Método POST detectado
+[23-May-2025 22:00:55 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[23-May-2025 22:00:55 Europe/Berlin] ===> UsuarioDAO instanciado
+[23-May-2025 22:00:55 Europe/Berlin] ===> Usuario encontrado: sí
+[23-May-2025 22:00:55 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[23-May-2025 22:00:55 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[23-May-2025 22:07:24 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:07:24 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:07:24 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:07:24 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:07:32 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:07:32 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[23-May-2025 22:07:41 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:07:41 Europe/Berlin] ===> Método POST detectado
+[23-May-2025 22:07:41 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[23-May-2025 22:07:41 Europe/Berlin] ===> UsuarioDAO instanciado
+[23-May-2025 22:07:41 Europe/Berlin] ===> Usuario encontrado: sí
+[23-May-2025 22:07:41 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[23-May-2025 22:07:41 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[23-May-2025 22:08:42 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:08:42 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:08:42 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:08:42 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:09:29 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:09:29 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:09:29 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:09:29 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:09:31 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:09:31 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:09:31 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:09:31 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:14:19 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:14:19 Europe/Berlin] ===> Método POST detectado
+[23-May-2025 22:14:19 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[23-May-2025 22:14:19 Europe/Berlin] ===> UsuarioDAO instanciado
+[23-May-2025 22:14:19 Europe/Berlin] ===> Usuario encontrado: sí
+[23-May-2025 22:14:19 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[23-May-2025 22:14:19 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[23-May-2025 22:14:45 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:14:45 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:14:45 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:14:45 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:14:49 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:14:49 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[23-May-2025 22:15:14 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:15:14 Europe/Berlin] ===> Método POST detectado
+[23-May-2025 22:15:14 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[23-May-2025 22:15:14 Europe/Berlin] ===> UsuarioDAO instanciado
+[23-May-2025 22:15:14 Europe/Berlin] ===> Usuario encontrado: sí
+[23-May-2025 22:15:14 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[23-May-2025 22:15:14 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[23-May-2025 22:23:14 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:23:14 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:23:14 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:23:14 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:23:51 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:23:51 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:23:51 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:23:51 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:24:07 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:24:07 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:24:07 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:24:07 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:25:35 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:25:35 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:25:35 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:25:35 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:26:08 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:26:08 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:26:08 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:26:08 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:29:31 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:29:31 Europe/Berlin] ===> Método GET detectado
+[23-May-2025 22:29:31 Europe/Berlin] ===> Sesión encontrada
+[23-May-2025 22:29:31 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[23-May-2025 22:29:44 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:29:44 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[23-May-2025 22:31:42 Europe/Berlin] ===> Inicio del handler de sesión
+[23-May-2025 22:31:42 Europe/Berlin] ===> Método POST detectado
+[23-May-2025 22:31:42 Europe/Berlin] ===> JSON recibido: {"usuario":"tecnico_demo","contrasena":"147"}
+[23-May-2025 22:31:42 Europe/Berlin] ===> UsuarioDAO instanciado
+[23-May-2025 22:31:42 Europe/Berlin] ===> Usuario encontrado: sí
+[23-May-2025 22:31:42 Europe/Berlin] ===> Tipo usuario: TECNICO
+[23-May-2025 22:31:42 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[26-May-2025 18:19:25 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:19:25 Europe/Berlin] ===> Método GET detectado
+[26-May-2025 18:19:25 Europe/Berlin] ===> No hay sesión activa
+[26-May-2025 18:19:30 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:19:30 Europe/Berlin] ===> Método GET detectado
+[26-May-2025 18:19:30 Europe/Berlin] ===> No hay sesión activa
+[26-May-2025 18:19:58 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:19:58 Europe/Berlin] ===> Método POST detectado
+[26-May-2025 18:19:58 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[26-May-2025 18:19:58 Europe/Berlin] ===> UsuarioDAO instanciado
+[26-May-2025 18:19:58 Europe/Berlin] ===> Usuario encontrado: sí
+[26-May-2025 18:19:58 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[26-May-2025 18:19:58 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[26-May-2025 18:41:51 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:41:51 Europe/Berlin] ===> Método GET detectado
+[26-May-2025 18:41:51 Europe/Berlin] ===> No hay sesión activa
+[26-May-2025 18:41:57 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:41:57 Europe/Berlin] ===> Método GET detectado
+[26-May-2025 18:41:57 Europe/Berlin] ===> Sesión encontrada
+[26-May-2025 18:41:57 Europe/Berlin] ===> Usuario es general: vigilante_demo
+[26-May-2025 18:42:20 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:42:20 Europe/Berlin] ===> Método POST detectado
+[26-May-2025 18:42:20 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[26-May-2025 18:42:20 Europe/Berlin] ===> UsuarioDAO instanciado
+[26-May-2025 18:42:20 Europe/Berlin] ===> Usuario encontrado: sí
+[26-May-2025 18:42:20 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[26-May-2025 18:42:20 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[26-May-2025 18:44:12 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:44:12 Europe/Berlin] ===> Método POST detectado
+[26-May-2025 18:44:12 Europe/Berlin] ===> JSON recibido: {"usuario":"tecnico_demo","contrasena":"147"}
+[26-May-2025 18:44:12 Europe/Berlin] ===> UsuarioDAO instanciado
+[26-May-2025 18:44:12 Europe/Berlin] ===> Usuario encontrado: sí
+[26-May-2025 18:44:12 Europe/Berlin] ===> Tipo usuario: TECNICO
+[26-May-2025 18:44:12 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[26-May-2025 18:51:50 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:51:50 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[26-May-2025 18:51:57 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:51:57 Europe/Berlin] ===> Método POST detectado
+[26-May-2025 18:51:57 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[26-May-2025 18:51:57 Europe/Berlin] ===> UsuarioDAO instanciado
+[26-May-2025 18:51:57 Europe/Berlin] ===> Usuario encontrado: no
+[26-May-2025 18:51:57 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[26-May-2025 18:51:58 Europe/Berlin] ===> ProfesorDAO instanciado
+[26-May-2025 18:51:58 Europe/Berlin] ===> Profesor encontrado: sí
+[26-May-2025 18:51:58 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[26-May-2025 18:52:09 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:52:09 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[26-May-2025 18:52:26 Europe/Berlin] ===> Inicio del handler de sesión
+[26-May-2025 18:52:26 Europe/Berlin] ===> Método POST detectado
+[26-May-2025 18:52:26 Europe/Berlin] ===> JSON recibido: {"usuario":"tecnico_demo","contrasena":"147"}
+[26-May-2025 18:52:26 Europe/Berlin] ===> UsuarioDAO instanciado
+[26-May-2025 18:52:26 Europe/Berlin] ===> Usuario encontrado: sí
+[26-May-2025 18:52:26 Europe/Berlin] ===> Tipo usuario: TECNICO
+[26-May-2025 18:52:26 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[27-May-2025 17:16:43 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 17:16:43 Europe/Berlin] ===> Método GET detectado
+[27-May-2025 17:16:43 Europe/Berlin] ===> No hay sesión activa
+[27-May-2025 17:16:48 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 17:16:48 Europe/Berlin] ===> Método GET detectado
+[27-May-2025 17:16:48 Europe/Berlin] ===> No hay sesión activa
+[27-May-2025 17:39:34 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 17:39:34 Europe/Berlin] ===> Método POST detectado
+[27-May-2025 17:39:34 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[27-May-2025 17:39:34 Europe/Berlin] ===> UsuarioDAO instanciado
+[27-May-2025 17:39:34 Europe/Berlin] ===> Usuario encontrado: sí
+[27-May-2025 17:39:34 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[27-May-2025 17:39:34 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[27-May-2025 17:40:50 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 17:40:50 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[27-May-2025 17:40:58 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 17:40:58 Europe/Berlin] ===> Método POST detectado
+[27-May-2025 17:40:58 Europe/Berlin] ===> JSON recibido: {"usuario":"tecnico_demo","contrasena":"147"}
+[27-May-2025 17:40:58 Europe/Berlin] ===> UsuarioDAO instanciado
+[27-May-2025 17:40:58 Europe/Berlin] ===> Usuario encontrado: sí
+[27-May-2025 17:40:58 Europe/Berlin] ===> Tipo usuario: TECNICO
+[27-May-2025 17:40:58 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[27-May-2025 17:48:59 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 17:48:59 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[27-May-2025 17:49:09 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 17:49:09 Europe/Berlin] ===> Método POST detectado
+[27-May-2025 17:49:09 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[27-May-2025 17:49:09 Europe/Berlin] ===> UsuarioDAO instanciado
+[27-May-2025 17:49:09 Europe/Berlin] ===> Usuario encontrado: sí
+[27-May-2025 17:49:09 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[27-May-2025 17:49:09 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[27-May-2025 21:59:17 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 21:59:17 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[27-May-2025 21:59:30 Europe/Berlin] ===> Inicio del handler de sesión
+[27-May-2025 21:59:30 Europe/Berlin] ===> Método POST detectado
+[27-May-2025 21:59:30 Europe/Berlin] ===> JSON recibido: {"usuario":"tecnico_demo","contrasena":"147"}
+[27-May-2025 21:59:30 Europe/Berlin] ===> UsuarioDAO instanciado
+[27-May-2025 21:59:30 Europe/Berlin] ===> Usuario encontrado: sí
+[27-May-2025 21:59:30 Europe/Berlin] ===> Tipo usuario: TECNICO
+[27-May-2025 21:59:30 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[28-May-2025 18:09:19 Europe/Berlin] ===> Inicio del handler de sesión
+[28-May-2025 18:09:19 Europe/Berlin] ===> Método GET detectado
+[28-May-2025 18:09:19 Europe/Berlin] ===> No hay sesión activa
+[28-May-2025 18:09:22 Europe/Berlin] ===> Inicio del handler de sesión
+[28-May-2025 18:09:22 Europe/Berlin] ===> Método GET detectado
+[28-May-2025 18:09:22 Europe/Berlin] ===> No hay sesión activa
+[29-May-2025 17:32:40 Europe/Berlin] ===> Inicio del handler de sesión
+[29-May-2025 17:32:40 Europe/Berlin] ===> Método GET detectado
+[29-May-2025 17:32:40 Europe/Berlin] ===> No hay sesión activa
+[29-May-2025 17:33:07 Europe/Berlin] ===> Inicio del handler de sesión
+[29-May-2025 17:33:07 Europe/Berlin] ===> Método GET detectado
+[29-May-2025 17:33:07 Europe/Berlin] ===> No hay sesión activa
+[30-May-2025 18:23:09 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:23:09 Europe/Berlin] ===> Método GET detectado
+[30-May-2025 18:23:09 Europe/Berlin] ===> No hay sesión activa
+[30-May-2025 18:23:29 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:23:29 Europe/Berlin] ===> Método GET detectado
+[30-May-2025 18:23:29 Europe/Berlin] ===> No hay sesión activa
+[30-May-2025 18:23:41 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:23:41 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 18:23:41 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[30-May-2025 18:23:41 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 18:23:41 Europe/Berlin] ===> Usuario encontrado: sí
+[30-May-2025 18:23:41 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[30-May-2025 18:23:41 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[30-May-2025 18:29:03 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:29:03 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 18:29:03 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[30-May-2025 18:29:03 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 18:29:03 Europe/Berlin] ===> Usuario encontrado: no
+[30-May-2025 18:29:03 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[30-May-2025 18:29:03 Europe/Berlin] ===> ProfesorDAO instanciado
+[30-May-2025 18:29:03 Europe/Berlin] ===> Profesor encontrado: sí
+[30-May-2025 18:29:03 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[30-May-2025 18:30:40 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:30:40 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[30-May-2025 18:31:15 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:31:15 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 18:31:15 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[30-May-2025 18:31:15 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 18:31:15 Europe/Berlin] ===> Usuario encontrado: sí
+[30-May-2025 18:31:15 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[30-May-2025 18:31:15 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[30-May-2025 18:37:24 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:37:24 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[30-May-2025 18:37:38 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 18:37:38 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 18:37:38 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[30-May-2025 18:37:38 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 18:37:38 Europe/Berlin] ===> Usuario encontrado: sí
+[30-May-2025 18:37:38 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[30-May-2025 18:37:38 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[30-May-2025 20:02:16 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:02:16 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[30-May-2025 20:04:11 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:04:11 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 20:04:11 Europe/Berlin] ===> JSON recibido: {"usuario":"ROTC940430R89","contrasena":"910895"}
+[30-May-2025 20:04:11 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 20:04:11 Europe/Berlin] ===> Usuario encontrado: no
+[30-May-2025 20:04:11 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[30-May-2025 20:04:11 Europe/Berlin] ===> ProfesorDAO instanciado
+[30-May-2025 20:04:11 Europe/Berlin] ===> Profesor encontrado: no
+[30-May-2025 20:04:11 Europe/Berlin] ===> Profesor no encontrado
+[30-May-2025 20:04:38 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:04:38 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 20:04:38 Europe/Berlin] ===> JSON recibido: {"usuario":"ROTC940430R89","contrasena":"147"}
+[30-May-2025 20:04:38 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 20:04:38 Europe/Berlin] ===> Usuario encontrado: no
+[30-May-2025 20:04:38 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[30-May-2025 20:04:38 Europe/Berlin] ===> ProfesorDAO instanciado
+[30-May-2025 20:04:38 Europe/Berlin] ===> Profesor encontrado: no
+[30-May-2025 20:04:38 Europe/Berlin] ===> Profesor no encontrado
+[30-May-2025 20:05:08 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:05:08 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 20:05:08 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[30-May-2025 20:05:08 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 20:05:08 Europe/Berlin] ===> Usuario encontrado: no
+[30-May-2025 20:05:08 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[30-May-2025 20:05:08 Europe/Berlin] ===> ProfesorDAO instanciado
+[30-May-2025 20:05:09 Europe/Berlin] ===> Profesor encontrado: sí
+[30-May-2025 20:05:09 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[30-May-2025 20:05:53 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:05:53 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[30-May-2025 20:06:00 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:06:00 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 20:06:00 Europe/Berlin] ===> JSON recibido: {"usuario":"vigilante_demo","contrasena":"147"}
+[30-May-2025 20:06:00 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 20:06:00 Europe/Berlin] ===> Usuario encontrado: sí
+[30-May-2025 20:06:00 Europe/Berlin] ===> Tipo usuario: VIGILANTE
+[30-May-2025 20:06:00 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[30-May-2025 20:06:06 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:06:06 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[30-May-2025 20:06:11 Europe/Berlin] ===> Inicio del handler de sesión
+[30-May-2025 20:06:11 Europe/Berlin] ===> Método POST detectado
+[30-May-2025 20:06:11 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[30-May-2025 20:06:11 Europe/Berlin] ===> UsuarioDAO instanciado
+[30-May-2025 20:06:11 Europe/Berlin] ===> Usuario encontrado: sí
+[30-May-2025 20:06:11 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[30-May-2025 20:06:11 Europe/Berlin] ===> Contraseña válida. Usuario activo.
