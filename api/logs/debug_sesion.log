@@ -3403,3 +3403,647 @@ Stack trace:
 [30-May-2025 20:06:11 Europe/Berlin] ===> Usuario encontrado: sí
 [30-May-2025 20:06:11 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
 [30-May-2025 20:06:11 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 18:02:00 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:02:00 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 18:02:00 Europe/Berlin] ===> No hay sesión activa
+[02-Jun-2025 18:02:03 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:02:03 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 18:02:03 Europe/Berlin] ===> No hay sesión activa
+[02-Jun-2025 18:02:18 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:02:18 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 18:02:18 Europe/Berlin] ===> JSON recibido: {"usuario":"tecnico_demo","contrasena":"147"}
+[02-Jun-2025 18:02:18 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 18:02:18 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 18:02:18 Europe/Berlin] ===> Tipo usuario: TECNICO
+[02-Jun-2025 18:02:18 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 18:03:34 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:03:34 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 18:05:49 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 18:06:32 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:06:32 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 18:06:46 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:06:46 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 18:06:46 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 18:06:46 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 18:06:46 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 18:06:46 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 18:06:46 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 18:42:50 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:42:50 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> JSON recibido: {"usuario":"806996","contrasena":"PAHJ690317EE7"}
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 18:43:45 Europe/Berlin] ===> Login exitoso como profesor: JOSE PADILLA HERNANDEZ
+[02-Jun-2025 19:30:11 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 19:30:11 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 19:30:11 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 19:30:11 Europe/Berlin] ===> Usuario es profesor: JOSE PADILLA HERNANDEZ
+[02-Jun-2025 19:38:16 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 19:38:16 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 19:38:16 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 19:38:16 Europe/Berlin] ===> Usuario es profesor: JOSE PADILLA HERNANDEZ
+[02-Jun-2025 21:46:15 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:46:15 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 21:46:15 Europe/Berlin] ===> No hay sesión activa
+[02-Jun-2025 21:46:33 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:46:33 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 21:46:33 Europe/Berlin] ===> No hay sesión activa
+[02-Jun-2025 21:46:39 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:46:39 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 21:46:39 Europe/Berlin] ===> No hay sesión activa
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> JSON recibido: {"usuario":"ROTC940430R89","contrasena":"910895"}
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> Profesor encontrado: no
+[02-Jun-2025 21:57:14 Europe/Berlin] ===> Profesor no encontrado
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> JSON recibido: {"usuario":"ROTC940430R89","contrasena":"910895"}
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> Profesor encontrado: no
+[02-Jun-2025 21:57:29 Europe/Berlin] ===> Profesor no encontrado
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> JSON recibido: {"usuario":"ROTC940430R89","contrasena":"147"}
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> Profesor encontrado: no
+[02-Jun-2025 21:57:33 Europe/Berlin] ===> Profesor no encontrado
+[02-Jun-2025 21:57:41 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:57:41 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 21:57:41 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"1473"}
+[02-Jun-2025 21:57:41 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 21:57:41 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 21:57:41 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 21:57:41 Europe/Berlin] ===> Contraseña inválida o usuario inactivo
+[02-Jun-2025 21:57:45 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:57:45 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 21:57:45 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 21:57:46 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 21:57:46 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 21:57:46 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 21:57:46 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 21:58:30 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:58:30 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> JSON recibido: {"usuario":"ROTC940430R89","contrasena":"910895"}
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> Profesor encontrado: no
+[02-Jun-2025 21:58:40 Europe/Berlin] ===> Profesor no encontrado
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"910895"}
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> Profesor encontrado: no
+[02-Jun-2025 22:01:05 Europe/Berlin] ===> Profesor no encontrado
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:01:12 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:01:41 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:01:41 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:01:46 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:01:46 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:01:46 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:01:46 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:01:46 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:01:46 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:01:46 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 22:02:07 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:02:07 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:02:14 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:02:21 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:02:21 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:02:29 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:02:29 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:02:29 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:02:29 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:02:29 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:02:29 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:02:29 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 22:13:45 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:13:45 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 22:13:45 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 22:13:45 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 22:14:29 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:14:29 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:14:35 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:17:32 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:17:32 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:17:37 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:17:37 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:17:37 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:17:37 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:17:37 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:17:37 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:17:38 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 22:21:51 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:21:51 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 22:21:51 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 22:21:51 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 22:22:08 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:22:08 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:22:17 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:22:39 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:22:39 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:22:43 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:22:43 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:22:43 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:22:43 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:22:43 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:22:43 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:22:43 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 22:24:34 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:24:35 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 22:24:35 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 22:24:35 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 22:26:33 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:26:34 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 22:26:34 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 22:26:34 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 22:27:10 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:27:10 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:27:19 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:35:22 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:35:22 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:35:27 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:35:27 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:35:27 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"1473"}
+[02-Jun-2025 22:35:27 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:35:27 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:35:27 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:35:27 Europe/Berlin] ===> Contraseña inválida o usuario inactivo
+[02-Jun-2025 22:35:30 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:35:30 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:35:30 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:35:30 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:35:30 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:35:30 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:35:30 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 22:35:53 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:35:53 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 22:35:53 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 22:35:53 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 22:36:51 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:36:51 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 22:36:51 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 22:36:51 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 22:38:13 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:38:13 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 22:38:13 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 22:38:13 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 22:38:22 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:38:22 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:38:31 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:38:53 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:38:53 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:38:57 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:38:57 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:38:57 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:38:57 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:38:57 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:38:57 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:38:57 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 22:39:52 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:39:52 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:39:58 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:39:58 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:39:58 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:39:58 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:39:58 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:39:58 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:39:58 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:39:59 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:39:59 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:44:50 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:44:50 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:44:56 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:44:56 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:44:56 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:44:56 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:44:56 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:44:56 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:44:56 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 22:47:25 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:47:25 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 22:47:46 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[02-Jun-2025 22:48:03 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:48:03 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 22:48:08 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 22:48:08 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 22:48:08 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 22:48:08 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 22:48:08 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 22:48:08 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 22:48:08 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 23:59:06 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 23:59:07 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 23:59:07 Europe/Berlin] ===> No hay sesión activa
+[02-Jun-2025 23:59:10 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 23:59:10 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 23:59:10 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[02-Jun-2025 23:59:10 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 23:59:10 Europe/Berlin] ===> Usuario encontrado: sí
+[02-Jun-2025 23:59:10 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[02-Jun-2025 23:59:10 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[02-Jun-2025 23:59:20 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 23:59:20 Europe/Berlin] ===> Método GET detectado
+[02-Jun-2025 23:59:20 Europe/Berlin] ===> Sesión encontrada
+[02-Jun-2025 23:59:20 Europe/Berlin] ===> Usuario es general: superusuario
+[02-Jun-2025 23:59:38 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 23:59:38 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> Inicio del handler de sesión
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> Método POST detectado
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> UsuarioDAO instanciado
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> Usuario encontrado: no
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> ProfesorDAO instanciado
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> Profesor encontrado: sí
+[02-Jun-2025 23:59:53 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 00:00:30 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:00:30 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 00:00:30 Europe/Berlin] ===> Sesión encontrada
+[03-Jun-2025 00:00:30 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 00:00:53 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:00:53 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 00:00:57 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:00:57 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 00:00:57 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[03-Jun-2025 00:00:57 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 00:00:57 Europe/Berlin] ===> Usuario encontrado: sí
+[03-Jun-2025 00:00:57 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[03-Jun-2025 00:00:57 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[03-Jun-2025 00:02:16 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:02:16 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 00:02:16 Europe/Berlin] ===> Sesión encontrada
+[03-Jun-2025 00:02:16 Europe/Berlin] ===> Usuario es general: superusuario
+[03-Jun-2025 00:08:07 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:08:07 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 00:08:16 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:08:16 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 00:08:16 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[03-Jun-2025 00:08:16 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 00:08:16 Europe/Berlin] ===> Usuario encontrado: no
+[03-Jun-2025 00:08:16 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[03-Jun-2025 00:08:17 Europe/Berlin] ===> ProfesorDAO instanciado
+[03-Jun-2025 00:08:17 Europe/Berlin] ===> Profesor encontrado: sí
+[03-Jun-2025 00:08:17 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 00:13:00 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:13:00 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 00:13:04 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:13:04 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 00:13:04 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[03-Jun-2025 00:13:04 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 00:13:04 Europe/Berlin] ===> Usuario encontrado: sí
+[03-Jun-2025 00:13:04 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[03-Jun-2025 00:13:04 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[03-Jun-2025 00:13:19 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:13:19 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> Usuario encontrado: no
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> ProfesorDAO instanciado
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> Profesor encontrado: sí
+[03-Jun-2025 00:22:01 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 00:25:23 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:25:23 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 00:25:27 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:25:27 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 00:25:27 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[03-Jun-2025 00:25:28 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 00:25:28 Europe/Berlin] ===> Usuario encontrado: sí
+[03-Jun-2025 00:25:28 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[03-Jun-2025 00:25:28 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[03-Jun-2025 00:29:12 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:29:12 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 00:29:18 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:29:18 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 00:29:18 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[03-Jun-2025 00:29:18 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 00:29:18 Europe/Berlin] ===> Usuario encontrado: no
+[03-Jun-2025 00:29:18 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[03-Jun-2025 00:29:18 Europe/Berlin] ===> ProfesorDAO instanciado
+[03-Jun-2025 00:29:19 Europe/Berlin] ===> Profesor encontrado: sí
+[03-Jun-2025 00:29:19 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 00:29:29 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:29:30 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 00:29:30 Europe/Berlin] ===> Sesión encontrada
+[03-Jun-2025 00:29:30 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 00:48:39 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:48:39 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 00:58:53 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 00:58:53 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 00:58:53 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[03-Jun-2025 00:58:54 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 00:58:54 Europe/Berlin] ===> Usuario encontrado: sí
+[03-Jun-2025 00:58:54 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[03-Jun-2025 00:58:54 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[03-Jun-2025 01:02:17 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 01:02:17 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 01:02:33 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 01:02:33 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 01:02:33 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[03-Jun-2025 01:02:34 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 01:02:34 Europe/Berlin] ===> Usuario encontrado: no
+[03-Jun-2025 01:02:34 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[03-Jun-2025 01:02:34 Europe/Berlin] ===> ProfesorDAO instanciado
+[03-Jun-2025 01:02:34 Europe/Berlin] ===> Profesor encontrado: sí
+[03-Jun-2025 01:02:34 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 01:10:56 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 01:10:56 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 01:11:04 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 01:11:04 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 01:11:04 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[03-Jun-2025 01:11:04 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 01:11:04 Europe/Berlin] ===> Usuario encontrado: sí
+[03-Jun-2025 01:11:04 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[03-Jun-2025 01:11:04 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[03-Jun-2025 17:59:14 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 17:59:14 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 17:59:14 Europe/Berlin] ===> No hay sesión activa
+[03-Jun-2025 17:59:17 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 17:59:17 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 17:59:17 Europe/Berlin] ===> No hay sesión activa
+[03-Jun-2025 17:59:20 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 17:59:20 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 17:59:20 Europe/Berlin] ===> No hay sesión activa
+[03-Jun-2025 18:00:05 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 18:00:05 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 18:00:05 Europe/Berlin] ===> JSON recibido: {"usuario":"superusuario","contrasena":"147"}
+[03-Jun-2025 18:00:06 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 18:00:06 Europe/Berlin] ===> Usuario encontrado: sí
+[03-Jun-2025 18:00:06 Europe/Berlin] ===> Tipo usuario: SUPERUSUARIO
+[03-Jun-2025 18:00:06 Europe/Berlin] ===> Contraseña válida. Usuario activo.
+[03-Jun-2025 22:11:55 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 22:11:55 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[03-Jun-2025 22:12:11 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 22:12:11 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 22:12:11 Europe/Berlin] ===> No hay sesión activa
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> Método POST detectado
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> UsuarioDAO instanciado
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> Usuario encontrado: no
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> ProfesorDAO instanciado
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> Profesor encontrado: sí
+[03-Jun-2025 22:12:22 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[03-Jun-2025 22:15:50 Europe/Berlin] ===> Inicio del handler de sesión
+[03-Jun-2025 22:15:50 Europe/Berlin] ===> Método GET detectado
+[03-Jun-2025 22:15:50 Europe/Berlin] ===> Sesión encontrada
+[03-Jun-2025 22:15:50 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[05-Jun-2025 18:21:54 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:21:54 Europe/Berlin] ===> Método GET detectado
+[05-Jun-2025 18:21:54 Europe/Berlin] ===> No hay sesión activa
+[05-Jun-2025 18:22:12 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:22:12 Europe/Berlin] ===> Método GET detectado
+[05-Jun-2025 18:22:12 Europe/Berlin] ===> No hay sesión activa
+[05-Jun-2025 18:22:31 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:22:31 Europe/Berlin] ===> Método POST detectado
+[05-Jun-2025 18:22:31 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[05-Jun-2025 18:22:31 Europe/Berlin] ===> UsuarioDAO instanciado
+[05-Jun-2025 18:22:31 Europe/Berlin] ===> Usuario encontrado: no
+[05-Jun-2025 18:22:31 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[05-Jun-2025 18:22:32 Europe/Berlin] ===> ProfesorDAO instanciado
+[05-Jun-2025 18:22:32 Europe/Berlin] ===> Profesor encontrado: sí
+[05-Jun-2025 18:22:32 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[05-Jun-2025 18:34:12 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:34:12 Europe/Berlin] ===> Método GET detectado
+[05-Jun-2025 18:34:12 Europe/Berlin] ===> Sesión encontrada
+[05-Jun-2025 18:34:12 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[05-Jun-2025 18:39:44 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:39:45 Europe/Berlin] ===> Método GET detectado
+[05-Jun-2025 18:39:45 Europe/Berlin] ===> Sesión encontrada
+[05-Jun-2025 18:39:45 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[05-Jun-2025 18:39:48 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:39:48 Europe/Berlin] ===> Método GET detectado
+[05-Jun-2025 18:39:48 Europe/Berlin] ===> Sesión encontrada
+[05-Jun-2025 18:39:48 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[05-Jun-2025 18:41:56 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:41:57 Europe/Berlin] ===> Método GET detectado
+[05-Jun-2025 18:41:57 Europe/Berlin] ===> Sesión encontrada
+[05-Jun-2025 18:41:57 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[05-Jun-2025 18:46:20 Europe/Berlin] ===> Inicio del handler de sesión
+[05-Jun-2025 18:46:20 Europe/Berlin] ===> Método GET detectado
+[05-Jun-2025 18:46:20 Europe/Berlin] ===> Sesión encontrada
+[05-Jun-2025 18:46:20 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:01:01 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:01:01 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:01:01 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:01:01 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:09:29 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:09:29 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:09:29 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:09:29 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:24:47 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:24:47 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:24:47 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:24:47 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:25:17 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:25:17 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:25:17 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:25:17 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:26:54 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:26:54 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:26:54 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:26:54 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:27:22 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:27:22 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:27:22 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:27:22 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:27:36 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:27:36 Europe/Berlin] ===> Método DELETE detectado. Cerrando sesión.
+[06-Jun-2025 20:28:05 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:28:05 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:28:05 Europe/Berlin] ===> No hay sesión activa
+[06-Jun-2025 20:28:24 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:28:24 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:28:24 Europe/Berlin] ===> No hay sesión activa
+[06-Jun-2025 20:28:37 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:28:37 Europe/Berlin] ===> Método POST detectado
+[06-Jun-2025 20:28:37 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[06-Jun-2025 20:28:38 Europe/Berlin] ===> UsuarioDAO instanciado
+[06-Jun-2025 20:28:38 Europe/Berlin] ===> Usuario encontrado: no
+[06-Jun-2025 20:28:38 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[06-Jun-2025 20:28:38 Europe/Berlin] ===> ProfesorDAO instanciado
+[06-Jun-2025 20:28:38 Europe/Berlin] ===> Profesor encontrado: sí
+[06-Jun-2025 20:28:38 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:30:34 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:30:34 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:30:34 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:30:34 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:44:21 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:44:21 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:44:21 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:44:21 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[06-Jun-2025 20:55:01 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:55:01 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:55:01 Europe/Berlin] ===> No hay sesión activa
+[06-Jun-2025 20:55:15 Europe/Berlin] ===> Inicio del handler de sesión
+[06-Jun-2025 20:55:15 Europe/Berlin] ===> Método GET detectado
+[06-Jun-2025 20:55:15 Europe/Berlin] ===> Sesión encontrada
+[06-Jun-2025 20:55:15 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[09-Jun-2025 17:45:08 Europe/Berlin] ===> Inicio del handler de sesión
+[09-Jun-2025 17:45:08 Europe/Berlin] ===> Método GET detectado
+[09-Jun-2025 17:45:08 Europe/Berlin] ===> No hay sesión activa
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> Inicio del handler de sesión
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> Método POST detectado
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"\"C:\\Users\\Usuario\\Documents\\MikuLab\\laboratorios-front\""}
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> UsuarioDAO instanciado
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> Usuario encontrado: no
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> ProfesorDAO instanciado
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> Profesor encontrado: no
+[09-Jun-2025 17:45:39 Europe/Berlin] ===> Profesor no encontrado
+[09-Jun-2025 17:49:57 Europe/Berlin] ===> Inicio del handler de sesión
+[09-Jun-2025 17:49:57 Europe/Berlin] ===> Método POST detectado
+[09-Jun-2025 17:49:57 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[09-Jun-2025 17:49:58 Europe/Berlin] ===> UsuarioDAO instanciado
+[09-Jun-2025 17:49:58 Europe/Berlin] ===> Usuario encontrado: no
+[09-Jun-2025 17:49:58 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[09-Jun-2025 17:49:58 Europe/Berlin] ===> ProfesorDAO instanciado
+[09-Jun-2025 17:49:58 Europe/Berlin] ===> Profesor encontrado: sí
+[09-Jun-2025 17:49:58 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:15:25 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:15:25 Europe/Berlin] ===> Método POST detectado
+[10-Jun-2025 21:15:25 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[10-Jun-2025 21:15:26 Europe/Berlin] ===> UsuarioDAO instanciado
+[10-Jun-2025 21:15:26 Europe/Berlin] ===> Usuario encontrado: no
+[10-Jun-2025 21:15:26 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[10-Jun-2025 21:15:26 Europe/Berlin] ===> ProfesorDAO instanciado
+[10-Jun-2025 21:15:26 Europe/Berlin] ===> Profesor encontrado: sí
+[10-Jun-2025 21:15:26 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:26:28 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:26:29 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 21:26:29 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 21:26:29 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:28:30 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:28:31 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 21:28:31 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 21:28:31 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:28:58 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:28:58 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 21:28:58 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 21:28:58 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:35:12 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:35:12 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 21:35:12 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 21:35:12 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:38:25 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:38:25 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 21:38:25 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 21:38:25 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:39:01 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:39:01 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 21:39:01 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 21:39:01 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 21:41:36 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 21:41:36 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 21:41:36 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 21:41:36 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 22:03:00 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 22:03:00 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 22:03:00 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 22:03:00 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 22:04:21 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 22:04:22 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 22:04:22 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 22:04:22 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 22:11:53 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 22:11:53 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 22:11:53 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 22:11:53 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 22:23:47 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 22:23:47 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 22:23:47 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 22:23:47 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[10-Jun-2025 22:30:03 Europe/Berlin] ===> Inicio del handler de sesión
+[10-Jun-2025 22:30:04 Europe/Berlin] ===> Método GET detectado
+[10-Jun-2025 22:30:04 Europe/Berlin] ===> Sesión encontrada
+[10-Jun-2025 22:30:04 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO

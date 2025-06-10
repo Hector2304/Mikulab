@@ -1,5 +1,6 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/laboratorios_fca/dao/impl/LaboratoriosDAO.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/db/ReservacionesBD.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/dao/AbstractDAO.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/reservaciones/dao/IReservacionDAO.php";
@@ -359,7 +360,7 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
             throw $e;
         }
     }
-
+	
     public function listadoPorFecha(array $fechas): array
     {
         try {
@@ -464,14 +465,50 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
         }
     }
 
-   public function importarClasesPredeterminadas(string $fechaInicio, string $fechaFin): int
-{
-    try {
-        $connInterna = $this->conexion->getConexion();
-        $connExterna = LaboratoriosFCABD::getInstance()->getConexion();
 
-        // 🚀 Traer todo desde la externa, incluyendo el ID real del salón (laboratorio)
-        $stmt = $connExterna->prepare("
+    /*
+    public function obtenerClasesPredeterminadas(string $fechaInicio, string $fechaFin): array
+    {
+        try {
+            $connExterna = LaboratoriosFCABD::getInstance()->getConexion();
+
+            $stmt = $connExterna->prepare("
+            SELECT 
+                hg.hogr_id_grupo,
+                g.grup_id_profesor,
+                hg.hogr_id_horario,
+                hg.hogr_id_dia,
+                s.salo_id_salon AS lab_id,
+                s.salo_nombre,
+                h.hora_ini,
+                h.hora_fin
+            FROM horario_grupo hg
+            JOIN grupo g ON g.grup_id_grupo = hg.hogr_id_grupo
+            JOIN salon s ON s.salo_id_salon = hg.hogr_id_salon
+            JOIN horario h ON h.hora_id_horario = hg.hogr_id_horario
+            WHERE s.salo_tipo = 'L' 
+              AND s.salo_estado = 'A' 
+              AND hg.hogr_id_salon IS NOT NULL
+        ");
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            throw $e;
+        }
+    }
+*/
+//Funcion mejorada de la anterior, ni idea si jala chido
+    public function consultarClasesPredeterminadasPorSemana(int $year, int $week): array
+
+    {
+        try {
+            $connExterna = LaboratoriosFCABD::getInstance()->getConexion();
+            $connInterna = $this->conexion->getConexion();
+
+            // 🔹 Traer clases predeterminadas
+            $stmt = $connExterna->prepare("
             SELECT 
                 hg.hogr_id_grupo,
                 g.grup_id_profesor,
@@ -484,30 +521,65 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
             JOIN grupo g ON g.grup_id_grupo = hg.hogr_id_grupo
             JOIN salon s ON s.salo_id_salon = hg.hogr_id_salon
             JOIN horario h ON h.hora_id_horario = hg.hogr_id_horario
-            WHERE s.salo_tipo = 'L' AND s.salo_estado = 'A' AND hg.hogr_id_salon IS NOT NULL
+            JOIN periodo p ON p.peri_id_periodo = g.grup_id_periodo
+            WHERE s.salo_tipo = 'L' 
+              AND s.salo_estado = 'A' 
+              AND hg.hogr_id_salon IS NOT NULL
+              AND p.peri_estatus = 'A'
         ");
-        $stmt->execute();
-        $clases = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $clases = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $insertadas = 0;
-        $fecha = new DateTime($fechaInicio);
-        $fin = new DateTime($fechaFin);
+            // 🔹 Calcular semana
+            $monday = new DateTime();
+            $monday->setISODate($year, $week);
 
-        while ($fecha <= $fin) {
-            $semanaBase = clone $fecha;
-            $semanaBase->modify('monday this week');
+            $inicio = clone $monday;
+            $fin = (clone $monday)->modify('+6 days');
+
+            // 🔹 Exclusiones
+            $stmtEx = $connInterna->prepare("
+            SELECT * FROM exclusiones_clase_predeterminada 
+            WHERE excl_fecha BETWEEN :inicio AND :fin
+        ");
+            $stmtEx->bindValue(':inicio', $inicio->format('Y-m-d'), PDO::PARAM_STR);
+            $stmtEx->bindValue(':fin', $fin->format('Y-m-d'), PDO::PARAM_STR);
+            $stmtEx->execute();
+            $exclusiones = $stmtEx->fetchAll(PDO::FETCH_ASSOC);
+
+            $exclMap = [];
+            foreach ($exclusiones as $e) {
+                $key = "{$e['excl_fecha']}_{$e['excl_id_grupo']}_{$e['excl_id_laboratorio']}_{$e['excl_id_horario']}";
+                $exclMap[$key] = true;
+            }
+
+            // 🔹 Laboratorios válidos
+            $labsDAO = new LaboratoriosDAO(LaboratoriosFCABD::getInstance());
+            $labsValidos = $labsDAO->laboratoriosFCA();
+            $idsValidos = array_map(function($lab) {
+                return $lab->getSaloIdSalon();
+            }, $labsValidos);
+
+            // 🔹 Resultado de clases posibles
+            $clasesPosibles = [];
 
             foreach ($clases as $clase) {
-                $diaOffset = intval($clase['hogr_id_dia']) - 1;
-                $fechaClase = (clone $semanaBase)->modify("+$diaOffset days");
-                $fechaStr = $fechaClase->format('Y-m-d');
+                $labId = $clase['lab_id'];
 
-                // 🕓 Buscar ID de horario en la BD interna
+                if (!in_array($labId, $idsValidos)) continue;
+
+                $dia = intval($clase['hogr_id_dia']);
+                $fecha = (clone $monday)->modify("+" . ($dia - 1) . " days")->format('Y-m-d');
+
+                $clave = "{$fecha}_{$clase['hogr_id_grupo']}_{$labId}_{$clase['hogr_id_horario']}";
+                if (isset($exclMap[$clave])) continue;
+
+                // 🔹 Buscar horario interno
                 $horaStmt = $connInterna->prepare("
-                    SELECT hora_id_horario FROM horario 
-                    WHERE hora_ini = :ini AND hora_fin = :fin 
-                    LIMIT 1
-                ");
+                SELECT hora_id_horario FROM horario 
+                WHERE hora_ini = :ini AND hora_fin = :fin 
+                LIMIT 1
+            ");
                 $horaStmt->bindParam(":ini", $clase['hora_ini'], PDO::PARAM_STR);
                 $horaStmt->bindParam(":fin", $clase['hora_fin'], PDO::PARAM_STR);
                 $horaStmt->execute();
@@ -515,37 +587,164 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
                 if (!$hora) continue;
 
                 $idHorario = $hora['hora_id_horario'];
-                $labId = $clase['lab_id']; // 💡 Ya viene de la externa
 
-                // 🔒 Validar que no exista ya la reservación
+                // 🔹 Verificar si ya existe
                 $checkStmt = $connInterna->prepare("
-                    SELECT 1 FROM reservacion 
-                    WHERE rese_id_laboratorio = :lab 
-                    AND rese_fecha = :fecha 
-                    AND rese_id_horario = :horario
-                ");
+                SELECT 1 FROM reservacion 
+                WHERE rese_id_laboratorio = :lab AND rese_fecha = :fecha AND rese_id_horario = :horario
+            ");
                 $checkStmt->bindParam(":lab", $labId, PDO::PARAM_INT);
-                $checkStmt->bindParam(":fecha", $fechaStr, PDO::PARAM_STR);
+                $checkStmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
                 $checkStmt->bindParam(":horario", $idHorario, PDO::PARAM_INT);
                 $checkStmt->execute();
                 if ($checkStmt->fetch()) continue;
 
-                // 📝 Insertar reservación
+                // 🔹 Agregar a resultado (pero sin insertar)
+                $clasesPosibles[] = [
+                    "lab_id" => $labId,
+                    "fecha" => $fecha,
+                    "hora_ini" => $clase["hora_ini"],
+                    "hora_fin" => $clase["hora_fin"],
+                    "id_horario_interno" => $idHorario,
+                    "grupo_id" => $clase["hogr_id_grupo"],
+                    "profesor_id" => $clase["grup_id_profesor"],
+                    "hogr_id_dia" => $clase["hogr_id_dia"] // ✅
+                ];
+
+            }
+            $logPath = $_SERVER['DOCUMENT_ROOT'] . "/logs/clases_predeterminadas_debug.txt";
+
+            file_put_contents(
+                $logPath,
+                "🔢 Clases predeterminadas detectadas para semana {$week} de {$year}: " . count($clasesPosibles) . "\n",
+                FILE_APPEND
+            );
+
+            return $clasesPosibles;
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            throw $e;
+        }
+    }
+
+
+    //Funciona bien como prueba y es la base del SELECT DESACTIVAR ANTES DE ENTREGAR
+    public function importarClasesPredeterminadasPorSemana(int $year, int $week): int
+    {
+        try {
+            $connExterna = LaboratoriosFCABD::getInstance()->getConexion();
+            $connInterna = $this->conexion->getConexion();
+
+            // Traer clases predeterminadas de periodos activos
+            $stmt = $connExterna->prepare("
+            SELECT 
+                hg.hogr_id_grupo,
+                g.grup_id_profesor,
+                hg.hogr_id_horario,
+                hg.hogr_id_dia,
+                s.salo_id_salon AS lab_id,
+                h.hora_ini,
+                h.hora_fin
+            FROM horario_grupo hg
+            JOIN grupo g ON g.grup_id_grupo = hg.hogr_id_grupo
+            JOIN salon s ON s.salo_id_salon = hg.hogr_id_salon
+            JOIN horario h ON h.hora_id_horario = hg.hogr_id_horario
+            JOIN periodo p ON p.peri_id_periodo = g.grup_id_periodo
+            WHERE s.salo_tipo = 'L' 
+              AND s.salo_estado = 'A' 
+              AND hg.hogr_id_salon IS NOT NULL
+              AND p.peri_estatus = 'A'
+        ");
+            $stmt->execute();
+            $clases = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Calcular lunes de esa semana
+            $monday = new DateTime();
+            $monday->setISODate($year, $week);
+
+            $inicio = clone $monday;
+            $fin = (clone $monday)->modify('+6 days');
+
+            // Exclusiones activas
+            $stmtEx = $connInterna->prepare("
+            SELECT * FROM exclusiones_clase_predeterminada 
+            WHERE excl_fecha BETWEEN :inicio AND :fin
+        ");
+            $stmtEx->bindValue(':inicio', $inicio->format('Y-m-d'), PDO::PARAM_STR);
+            $stmtEx->bindValue(':fin', $fin->format('Y-m-d'), PDO::PARAM_STR);
+            $stmtEx->execute();
+            $exclusiones = $stmtEx->fetchAll(PDO::FETCH_ASSOC);
+
+            $exclMap = [];
+            foreach ($exclusiones as $e) {
+                $key = "{$e['excl_fecha']}_{$e['excl_id_grupo']}_{$e['excl_id_laboratorio']}_{$e['excl_id_horario']}";
+                $exclMap[$key] = true;
+            }
+
+            // ✅ Filtrar solo laboratorios válidos usando LaboratoriosDAO
+            $labsDAO = new LaboratoriosDAO(LaboratoriosFCABD::getInstance()); // ✅ conexión externa
+            $labsValidos = $labsDAO->laboratoriosFCA(); // Solo LAB% o K%
+            $idsValidos = array_map(function($lab) {
+                return $lab->getSaloIdSalon();
+            }, $labsValidos);
+
+            $insertadas = 0;
+
+            foreach ($clases as $clase) {
+                $labId = $clase['lab_id'];
+
+                // ⚠️ Saltar si no es un laboratorio válido
+                if (!in_array($labId, $idsValidos)) {
+                    continue;
+                }
+
+                $dia = intval($clase['hogr_id_dia']);
+                $fecha = (clone $monday)->modify("+" . ($dia - 1) . " days")->format('Y-m-d');
+
+                $clave = "{$fecha}_{$clase['hogr_id_grupo']}_{$labId}_{$clase['hogr_id_horario']}";
+                if (isset($exclMap[$clave])) continue;
+
+                // Buscar ID de horario en tabla interna
+                $horaStmt = $connInterna->prepare("
+                SELECT hora_id_horario FROM horario 
+                WHERE hora_ini = :ini AND hora_fin = :fin 
+                LIMIT 1
+            ");
+                $horaStmt->bindParam(":ini", $clase['hora_ini'], PDO::PARAM_STR);
+                $horaStmt->bindParam(":fin", $clase['hora_fin'], PDO::PARAM_STR);
+                $horaStmt->execute();
+                $hora = $horaStmt->fetch(PDO::FETCH_ASSOC);
+                if (!$hora) continue;
+
+                $idHorario = $hora['hora_id_horario'];
+
+                // Verificar si ya existe en reservaciones
+                $checkStmt = $connInterna->prepare("
+                SELECT 1 FROM reservacion 
+                WHERE rese_id_laboratorio = :lab AND rese_fecha = :fecha AND rese_id_horario = :horario
+            ");
+                $checkStmt->bindParam(":lab", $labId, PDO::PARAM_INT);
+                $checkStmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
+                $checkStmt->bindParam(":horario", $idHorario, PDO::PARAM_INT);
+                $checkStmt->execute();
+                if ($checkStmt->fetch()) continue;
+
+                // Insertar en reservación
                 $insertStmt = $connInterna->prepare("
-                    INSERT INTO reservacion (
-                        rese_id_laboratorio,
-                        rese_fecha,
-                        rese_id_horario,
-                        rese_reservado_por,
-                        rese_id_grupo,
-                        rese_tipo_grupo,
-                        rese_status
-                    ) VALUES (
-                        :lab, :fecha, :horario, :prof, :grupo, 'L', 'A'
-                    )
-                ");
+                INSERT INTO reservacion (
+                    rese_id_laboratorio,
+                    rese_fecha,
+                    rese_id_horario,
+                    rese_reservado_por,
+                    rese_id_grupo,
+                    rese_tipo_grupo,
+                    rese_status
+                ) VALUES (
+                    :lab, :fecha, :horario, :prof, :grupo, 'L', 'A'
+                )
+            ");
                 $insertStmt->bindParam(":lab", $labId, PDO::PARAM_INT);
-                $insertStmt->bindParam(":fecha", $fechaStr, PDO::PARAM_STR);
+                $insertStmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
                 $insertStmt->bindParam(":horario", $idHorario, PDO::PARAM_INT);
                 $insertStmt->bindParam(":prof", $clase['grup_id_profesor'], PDO::PARAM_INT);
                 $insertStmt->bindParam(":grupo", $clase['hogr_id_grupo'], PDO::PARAM_INT);
@@ -555,17 +754,15 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
                 }
             }
 
-            $fecha->modify('+7 days');
+            return $insertadas;
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            throw $e;
         }
-
-        return $insertadas;
-    } catch (Exception $e) {
-        error_log($e->getMessage());
-        throw $e;
     }
 
 
-}
+
 
 
 }

@@ -52,7 +52,11 @@
 				</b-navbar-nav>
 
 				<b-navbar-nav class="ml-auto" v-if="isSessionActive && personName && username">
-					<b-nav-item-dropdown right>
+          <b-nav-item to="/profesor/mensajes" v-if="userType === 'PROFESOR'">
+            <b-icon icon="envelope" variant="light" font-scale="1.2" />
+          </b-nav-item>
+
+          <b-nav-item-dropdown right>
 						<template #button-content>{{ personName }} ({{ username }})</template>
 						<b-dropdown-item @click="logout">Cerrar Sesión</b-dropdown-item>
 					</b-nav-item-dropdown>

@@ -50,3 +50,4 @@ class ProfesorReservaAlta extends BaseHandler
 // Permitimos acceso tanto a PROFESOR como SUPERUSUARIO
 (new RESTEndpointClient(['PATCH'], [TipoUsuarioEnum::PROFESOR, TipoUsuarioEnum::SUPERUSUARIO]))
     ->execute(new ProfesorReservaAlta);
+

@@ -15,6 +15,7 @@ export default {
 			softwareLoading: false,
 			softwareListado: [],
       softwareSeleccionado: [],
+      clasesPredeterminadas: [],
 
 
       grupoSelected: undefined,
@@ -309,6 +310,7 @@ export default {
 		this.loadLaboratorios();
 		this.loadSoftwares();
 		this.loadAsocLabSoft();
+    this.loadClasesPredeterminadas();
 	},
 
 	methods: {
@@ -517,85 +519,114 @@ export default {
 			this.deselectHora(hObj.next);
 		},
 
-		async loadDisponibilidad(newDate) {
-			if (this.disponibilidadLoading) {
-				return;
-			}
+    async loadDisponibilidad(newDate) {
+      if (this.disponibilidadLoading) {
+        return;
+      }
 
-			this.disponibilidadLoading = true;
+      this.disponibilidadLoading = true;
 
-			this.deselectHoraAndLaboratorio();
+      this.deselectHoraAndLaboratorio();
 
-			let diaSemana = this.$moment.tz(newDate, 'yyyy-MM-DD', 'America/Mexico_City').day();
+      let diaSemana = this.$moment.tz(newDate, 'yyyy-MM-DD', 'America/Mexico_City').day();
+      this.isSabado = diaSemana === 6;
 
-			this.isSabado = diaSemana === 6;
+      let labIds = this.laboratorios.map((lab) => lab.saloIdSalon);
+      let hrsNoDisp = {};
 
-			let labIds = this.laboratorios.map((lab) => lab.saloIdSalon);
-			let hrsNoDisp = {};
+      // 🔹 Reservas reales
+      try {
+        const response = await this.$axios.post('controller/reserva/disponibilidad.php', {
+          dias: [diaSemana],
+          labIds: labIds
+        });
 
-			try {
-				const response = await this.$axios.post('controller/reserva/disponibilidad.php', {
-					dias: [diaSemana],
-					labIds: labIds
-				});
+        for (let id in response.data) {
+          hrsNoDisp[id] = new Set();
 
-				for (let id in response.data) {
-					hrsNoDisp[id] = new Set();
+          for (let horario of response.data[id]) {
+            let horaIni = Number(horario.horaIni) / 100;
+            let horaFin = Number(horario.horaFin) / 100;
 
-					for (let horario of response.data[id]) {
-						let horaIni = Number(horario.horaIni) / 100;
-						let horaFin = Number(horario.horaFin) / 100;
+            for (let i = horaIni; i < horaFin; i++) {
+              hrsNoDisp[id].add(i);
+            }
+          }
+        }
+      } catch (error) {}
 
-						for (let i = horaIni; i < horaFin; i++) {
-							hrsNoDisp[id].add(i);
-						}
-					}
-				}
-			} catch (error) {}
+      // 🔹 Horarios bloqueados por admin
+      try {
+        const response = await this.$axios.post('controller/laboratorios/bloq-horario-get-day.php', {
+          fecha: newDate,
+          labIds: labIds
+        });
 
-			try {
-				const response = await this.$axios.post('controller/laboratorios/bloq-horario-get-day.php', {
-					fecha: newDate,
-					labIds: labIds
-				});
+        for (let horario of response.data) {
+          let idStr = `${horario.labId}`;
 
-				for (let horario of response.data) {
-					let idStr = `${horario.labId}`;
+          if (!hrsNoDisp[idStr]) {
+            hrsNoDisp[idStr] = new Set();
+          }
 
-					if (!hrsNoDisp[idStr]) {
-						hrsNoDisp[idStr] = new Set();
-					}
+          hrsNoDisp[idStr].add(horario.hour);
+        }
+      } catch (error) {}
 
-					hrsNoDisp[idStr].add(horario.hour);
-				}
-			} catch (error) {}
+      // 🔹 Cursos externos
+      try {
+        const response = await this.$axios.post(
+          'controller/externo/curso/asignacion-horario-get-disponibilidad.php',
+          {
+            fecha: newDate,
+            labIds: labIds
+          }
+        );
 
-			try {
-				const response = await this.$axios.post(
-					'controller/externo/curso/asignacion-horario-get-disponibilidad.php',
-					{
-						fecha: newDate,
-						labIds: labIds
-					}
-				);
+        for (let horario of response.data) {
+          let idStr = `${horario.labId}`;
 
-				for (let horario of response.data) {
-					let idStr = `${horario.labId}`;
+          if (!hrsNoDisp[idStr]) {
+            hrsNoDisp[idStr] = new Set();
+          }
 
-					if (!hrsNoDisp[idStr]) {
-						hrsNoDisp[idStr] = new Set();
-					}
+          for (let i = horario.hour; i < horario.end; i++) {
+            hrsNoDisp[idStr].add(i);
+          }
+        }
+      } catch (error) {}
 
-					for (let i = horario.hour; i < horario.end; i++) {
-						hrsNoDisp[idStr].add(i);
-					}
-				}
-			} catch (error) {}
+      // 🔹 Clases predeterminadas simuladas como activas
+      const fechaSeleccionada = this.$moment(newDate);
+      const lunesSemana = fechaSeleccionada.clone().startOf('isoWeek'); // lunes
 
-			this.disponibilidad = hrsNoDisp;
+      for (let clase of this.clasesPredeterminadas) {
+        const diaClase = Number(clase.hogr_id_dia); // 1=lunes...7=domingo
+        const fechaClase = lunesSemana.clone().add(diaClase - 1, 'days');
 
-			this.disponibilidadLoading = false;
-		},
+        if (!fechaClase.isSame(fechaSeleccionada, 'day')) continue;
+
+        // Podrías filtrar excepciones aquí si quieres
+        const labId = clase.lab_id;
+        const horaIni = Number(clase.hora_ini) / 100;
+        const horaFin = Number(clase.hora_fin) / 100;
+
+        if (!hrsNoDisp[labId]) {
+          hrsNoDisp[labId] = new Set();
+        }
+
+        for (let i = horaIni; i < horaFin; i++) {
+          hrsNoDisp[labId].add(i);
+        }
+      }
+      console.log('🧠 Clases predeterminadas cargadas:', this.clasesPredeterminadas);
+      console.log('📅 Fecha seleccionada:', fechaSeleccionada.format('YYYY-MM-DD'));
+      console.log('🧱 Disponibilidad final hrsNoDisp:', hrsNoDisp);
+
+      this.disponibilidad = hrsNoDisp;
+      this.disponibilidadLoading = false;
+    },
+
 
     confirmarReservar() {
       if (this.grupoSelected == null) {
@@ -651,7 +682,44 @@ export default {
           }
         })
         .then(() => {});
+    },
+    async loadClasesPredeterminadas() {
+      try {
+        const now = new Date();
+        const year = now.getFullYear();
+
+        const firstDayOfYear = new Date(year, 0, 1);
+        const pastDaysOfYear = (now - firstDayOfYear) / 86400000;
+        const currentWeek = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+
+        console.log("Enviando al backend:", { year, week: currentWeek });
+
+        const response = await this.$axios.post(
+          'http://localhost:7070/api/controller/reserva/predeterminadasPorSemana.php',
+          { year, week: currentWeek },
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            withCredentials: true
+          }
+        );
+
+        this.clasesPredeterminadas = Array.isArray(response.data.clases)
+          ? response.data.clases
+          : [];
+
+      } catch (error) {
+        console.error("Error al cargar clases predeterminadas:", error);
+        this.clasesPredeterminadas = [];
+      }
     }
+
+
+
+
+
+
 
   }
 };
