@@ -4047,3 +4047,28 @@ Stack trace:
 [10-Jun-2025 22:30:04 Europe/Berlin] ===> Método GET detectado
 [10-Jun-2025 22:30:04 Europe/Berlin] ===> Sesión encontrada
 [10-Jun-2025 22:30:04 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> Inicio del handler de sesión
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> Método POST detectado
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> JSON recibido: {"usuario":"910895","contrasena":"ROTC940430R89"}
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> UsuarioDAO instanciado
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> Usuario encontrado: no
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> Usuario no encontrado. Intentando como profesor...
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> ProfesorDAO instanciado
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> Profesor encontrado: sí
+[11-Jun-2025 18:48:36 Europe/Berlin] ===> Login exitoso como profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[11-Jun-2025 19:01:47 Europe/Berlin] ===> Inicio del handler de sesión
+[11-Jun-2025 19:01:47 Europe/Berlin] ===> Método GET detectado
+[11-Jun-2025 19:01:47 Europe/Berlin] ===> Sesión encontrada
+[11-Jun-2025 19:01:47 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[11-Jun-2025 19:05:20 Europe/Berlin] ===> Inicio del handler de sesión
+[11-Jun-2025 19:05:20 Europe/Berlin] ===> Método GET detectado
+[11-Jun-2025 19:05:20 Europe/Berlin] ===> Sesión encontrada
+[11-Jun-2025 19:05:20 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[11-Jun-2025 19:12:51 Europe/Berlin] ===> Inicio del handler de sesión
+[11-Jun-2025 19:12:51 Europe/Berlin] ===> Método GET detectado
+[11-Jun-2025 19:12:51 Europe/Berlin] ===> Sesión encontrada
+[11-Jun-2025 19:12:51 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO
+[11-Jun-2025 19:15:57 Europe/Berlin] ===> Inicio del handler de sesión
+[11-Jun-2025 19:15:57 Europe/Berlin] ===> Método GET detectado
+[11-Jun-2025 19:15:57 Europe/Berlin] ===> Sesión encontrada
+[11-Jun-2025 19:15:57 Europe/Berlin] ===> Usuario es profesor: JOSE CARLOS RODRIGUEZ TENORIO

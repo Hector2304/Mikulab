@@ -761,6 +761,44 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
         }
     }
 
+    public function porId($id)
+    {
+        try {
+            $conn = $this->conexion->getConexion();
+            $stmt = $conn->prepare(
+                "SELECT r.*, h.hora_ini, h.hora_fin
+			 FROM " . $this->tablaReservacion . " r
+			 JOIN horario h ON r." . $this->colReseIdHorario . " = h.hora_id_horario
+			 WHERE r." . $this->colReseIdReservacion . " = :id"
+            );
+            $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                $f = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($f) {
+                    $reserva = new ReservacionDTO;
+                    $reserva->setReseFecha($f[$this->colReseFecha]);
+                    $reserva->setReseIdGrupo($f[$this->colReseIdGrupo]);
+                    $reserva->setReseIdHorario($f[$this->colReseIdHorario]);
+                    $reserva->setReseIdLaboratorio($f[$this->colReseIdLaboratorio]);
+                    $reserva->setReseIdReservacion($f[$this->colReseIdReservacion]);
+                    $reserva->setReseReservadoEn($f[$this->colReseReservadoEn]);
+                    $reserva->setReseReservadoPor($f[$this->colReseReservadoPor]);
+                    $reserva->setReseStatus($f[$this->colReseStatus]);
+                    $reserva->setReseTipoGrupo($f[$this->colReseTipoGrupo]);
+                    $reserva->setHoraIni($f['hora_ini']);
+                    $reserva->setHoraFin($f['hora_fin']);
+                    return $reserva;
+                }
+            }
+
+            return null;
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            throw $e;
+        }
+    }
+
 
 
 
