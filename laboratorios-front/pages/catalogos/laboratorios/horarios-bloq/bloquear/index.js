@@ -180,7 +180,57 @@ export default {
 
       } catch (error) {}
 
-			this.loading = false;
+      // 🔹 Clases predeterminadas desde DAO
+      try {
+        const response = await this.$axios.post(
+          'http://localhost:7070/api/controller/reserva/predeterminadasPorSemana.php',
+          {
+            year: theYear,
+            week: theWeek,
+            labId: this.horariosSelectedLab.saloIdSalon
+
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            withCredentials: true
+          }
+        );
+
+        const todas = response.data.clases || [];
+        console.log(`📦 Se recibieron ${todas.length} clases predeterminadas en total`);
+
+        for (const clase of todas) {
+          const esDelLab = clase.lab_id == this.horariosSelectedLab.saloIdSalon;
+
+
+          if (!esDelLab) continue;
+
+          const diaClase = Number(this.$moment(clase.fecha).isoWeekday()); // 1 = lunes
+          const horaIni = Number(clase.hora_ini) / 100;
+          const horaFin = Number(clase.hora_fin) / 100;
+          const diaString = this.$getStringDayFromNumeric(diaClase);
+
+          for (let i = horaIni; i < horaFin; i++) {
+
+            this.$refs.schedulerWeek.selectPermanent(
+              { value: diaString },
+              { value: i },
+              {
+                type: 'DEFAULT',
+                motivo: 'Clase predeterminada'
+              }
+            );
+          }
+
+        }
+      } catch (error) {
+        console.error('❌ Error al cargar clases predeterminadas:', error);
+      }
+
+
+      this.loading = false;
 		},
 
     defaultCellAction(d, h, p, callback) {

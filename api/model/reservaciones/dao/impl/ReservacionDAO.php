@@ -500,8 +500,7 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
     }
 */
 //Funcion mejorada de la anterior, ni idea si jala chido
-    public function consultarClasesPredeterminadasPorSemana(int $year, int $week): array
-
+    public function consultarClasesPredeterminadasPorSemana($year, $week, $labId = null, $verificarReservas = true)
     {
         try {
             $connExterna = LaboratoriosFCABD::getInstance()->getConexion();
@@ -525,15 +524,18 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
             WHERE s.salo_tipo = 'L' 
               AND s.salo_estado = 'A' 
               AND hg.hogr_id_salon IS NOT NULL
+              " . ($labId !== null ? " AND s.salo_id_salon = :labId " : "") . "
               AND p.peri_estatus = 'A'
         ");
+            if ($labId !== null) {
+                $stmt->bindValue(':labId', $labId, PDO::PARAM_INT);
+            }
             $stmt->execute();
             $clases = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             // 🔹 Calcular semana
             $monday = new DateTime();
             $monday->setISODate($year, $week);
-
             $inicio = clone $monday;
             $fin = (clone $monday)->modify('+6 days');
 
@@ -564,14 +566,13 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
             $clasesPosibles = [];
 
             foreach ($clases as $clase) {
-                $labId = $clase['lab_id'];
-
-                if (!in_array($labId, $idsValidos)) continue;
+                $labIdClase = $clase['lab_id'];
+                if (!in_array($labIdClase, $idsValidos)) continue;
 
                 $dia = intval($clase['hogr_id_dia']);
                 $fecha = (clone $monday)->modify("+" . ($dia - 1) . " days")->format('Y-m-d');
 
-                $clave = "{$fecha}_{$clase['hogr_id_grupo']}_{$labId}_{$clase['hogr_id_horario']}";
+                $clave = "{$fecha}_{$clase['hogr_id_grupo']}_{$labIdClase}_{$clase['hogr_id_horario']}";
                 if (isset($exclMap[$clave])) continue;
 
                 // 🔹 Buscar horario interno
@@ -588,32 +589,32 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
 
                 $idHorario = $hora['hora_id_horario'];
 
-                // 🔹 Verificar si ya existe
-                $checkStmt = $connInterna->prepare("
-                SELECT 1 FROM reservacion 
-                WHERE rese_id_laboratorio = :lab AND rese_fecha = :fecha AND rese_id_horario = :horario
-            ");
-                $checkStmt->bindParam(":lab", $labId, PDO::PARAM_INT);
-                $checkStmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
-                $checkStmt->bindParam(":horario", $idHorario, PDO::PARAM_INT);
-                $checkStmt->execute();
-                if ($checkStmt->fetch()) continue;
+                // 🔹 Verificar si ya existe (solo si $verificarReservas = true)
+                if ($verificarReservas) {
+                    $checkStmt = $connInterna->prepare("
+                    SELECT 1 FROM reservacion 
+                    WHERE rese_id_laboratorio = :lab AND rese_fecha = :fecha AND rese_id_horario = :horario
+                ");
+                    $checkStmt->bindParam(":lab", $labIdClase, PDO::PARAM_INT);
+                    $checkStmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
+                    $checkStmt->bindParam(":horario", $idHorario, PDO::PARAM_INT);
+                    $checkStmt->execute();
+                    if ($checkStmt->fetch()) continue;
+                }
 
-                // 🔹 Agregar a resultado (pero sin insertar)
                 $clasesPosibles[] = [
-                    "lab_id" => $labId,
+                    "lab_id" => $labIdClase,
                     "fecha" => $fecha,
                     "hora_ini" => $clase["hora_ini"],
                     "hora_fin" => $clase["hora_fin"],
                     "id_horario_interno" => $idHorario,
                     "grupo_id" => $clase["hogr_id_grupo"],
                     "profesor_id" => $clase["grup_id_profesor"],
-                    "hogr_id_dia" => $clase["hogr_id_dia"] // ✅
+                    "hogr_id_dia" => $clase["hogr_id_dia"]
                 ];
-
             }
-            $logPath = $_SERVER['DOCUMENT_ROOT'] . "/logs/clases_predeterminadas_debug.txt";
 
+            $logPath = $_SERVER['DOCUMENT_ROOT'] . "/logs/clases_predeterminadas_debug.txt";
             file_put_contents(
                 $logPath,
                 "🔢 Clases predeterminadas detectadas para semana {$week} de {$year}: " . count($clasesPosibles) . "\n",
@@ -626,6 +627,7 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
             throw $e;
         }
     }
+
 
 
     //Funciona bien como prueba y es la base del SELECT DESACTIVAR ANTES DE ENTREGAR

@@ -16,6 +16,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/reservaciones/dao/impl/Rese
 require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/db/LaboratoriosFCABD.php";
 
 try {
+    $input = json_decode(file_get_contents("php://input"), true);
+    $labId = isset($input['labId']) ? (int)$input['labId'] : null;
+
     $conn = LaboratoriosFCABD::getInstance()->getConexion();
     $stmt = $conn->prepare("SELECT * FROM periodo WHERE peri_estatus = 'A'");
     $stmt->execute();
@@ -25,24 +28,24 @@ try {
 
     $resumen = [];
     $total = 0;
-    $todasLasClases = []; // ⬅️ Aquí se acumulan todas las clases predeterminadas
+    $todasLasClases = [];
 
     foreach ($periodos as $p) {
         $inicio = new DateTime($p['peri_fec_ini']);
         $fin = new DateTime($p['peri_fec_fin']);
 
-        // Alinear fechas al lunes
         $inicio->modify('monday this week');
         $fin->modify('monday this week');
 
         while ($inicio <= $fin) {
-            $year = (int) $inicio->format("o");
-            $week = (int) $inicio->format("W");
+            $year = (int)$inicio->format("o");
+            $week = (int)$inicio->format("W");
 
-            $clases = $dao->consultarClasesPredeterminadasPorSemana($year, $week);
+            // ✅ Filtra por laboratorio si viene en el request
+            $clases = $dao->consultarClasesPredeterminadasPorSemana($year, $week, $labId, false);
+
             $resumen[] = "Semana $week de $year: " . count($clases);
             $total += count($clases);
-
             $todasLasClases = array_merge($todasLasClases, $clases);
 
             $inicio->modify('+1 week');
