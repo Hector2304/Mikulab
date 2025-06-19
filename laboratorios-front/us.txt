@@ -1,0 +1,20 @@
+{
+	"prof_id_profesor": 108
+	"prof_num_unam" : "159415",
+	"pers_rfc" : "AAGE491013C38"
+},
+{
+	"prof_id_profesor": 4829
+	"prof_num_unam" : "858678",
+	"pers_rfc" : "HEOM850808LR4"
+},
+{
+	"prof_id_profesor" : 5166,
+	"prof_num_unam" : "876985",
+	"pers_rfc" : "ROCE610906711"
+},
+{
+	"prof_id_profesor" : 140,
+	"prof_num_unam" : "812390",
+	"pers_rfc" : "AOIJ6409017A9"
+},
