@@ -1,0 +1,8 @@
+[2025-05-20 22:08:55] 🧾 Ejecutando cancelar() con idReservacion=35 y idProfesor=NULL
+[2025-05-20 22:08:55] 📄 Query ejecutado: UPDATE public.reservacion SET rese_status = 'C' WHERE rese_id_reservacion = :idReservacion
+[2025-05-20 22:08:55] 📊 Filas afectadas: 1
+[2025-05-20 22:08:55] 🧪 Resultado ejecutar(): Éxito
+[2025-05-20 22:12:29] 🧾 Ejecutando cancelar() con idReservacion=38 y idProfesor=NULL
+[2025-05-20 22:12:29] 📄 Query ejecutado: UPDATE public.reservacion SET rese_status = 'C' WHERE rese_id_reservacion = :idReservacion
+[2025-05-20 22:12:29] 📊 Filas afectadas: 1
+[2025-05-20 22:12:29] 🧪 Resultado ejecutar(): Éxito
