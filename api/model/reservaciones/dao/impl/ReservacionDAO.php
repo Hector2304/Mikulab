@@ -162,7 +162,7 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
 
             $success = $stmt->execute();
 
-            if ($success && $idProfesor !== null) {
+            /*if ($success && $idProfesor !== null) {
                 $reserva = $this->porId($idReservacion);
                 if ($reserva !== null) {
                     $fecha = date("d/m/Y", strtotime($reserva->getReseFecha()));
@@ -204,7 +204,97 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
                         echo "__POPUP__"; // 👈 Esto lo capturas desde PHP externo
                     }
                 }
+            } */
+            if ($success && $idProfesor !== null) {
+                // ✅ Cancelación realizada por un profesor
+                $reserva = $this->porId($idReservacion);
+                if ($reserva !== null) {
+                    $fecha = date("d/m/Y", strtotime($reserva->getReseFecha()));
+                    $horaIni = $reserva->getHoraIni();
+                    $horaFin = $reserva->getHoraFin();
+                    $idLab = $reserva->getReseIdLaboratorio();
+                    $idGrupo = $reserva->getReseIdGrupo();
+
+                    // 🔹 Obtener clave del laboratorio
+                    $stmtLab = $connExterna->prepare("SELECT salo_clave FROM salon WHERE salo_id_salon = :id");
+                    $stmtLab->bindParam(":id", $idLab, PDO::PARAM_INT);
+                    $stmtLab->execute();
+                    $nombreLab = $stmtLab->fetchColumn() ?: "Laboratorio $idLab";
+
+                    // 🔹 Obtener clave del grupo
+                    $stmtGrupo = $connExterna->prepare("SELECT grup_clave FROM grupo WHERE grup_id_grupo = :id");
+                    $stmtGrupo->bindParam(":id", $idGrupo, PDO::PARAM_INT);
+                    $stmtGrupo->execute();
+                    $nombreGrupo = $stmtGrupo->fetchColumn() ?: "Grupo $idGrupo";
+
+                    // 🔹 Formatear hora
+                    $horaIniFmt = substr($horaIni, 0, 2) . ":" . substr($horaIni, 2, 2);
+                    $horaFinFmt = substr($horaFin, 0, 2) . ":" . substr($horaFin, 2, 2);
+
+                    // 🔹 Mensaje para cancelación por parte del profesor
+                    $titulo = "Reservación cancelada";
+                    $contenido = "Se canceló la reservación del grupo $nombreGrupo en el laboratorio $nombreLab para el día $fecha de $horaIniFmt a $horaFinFmt.";
+
+                    $stmtMsg = $conn->prepare("
+            INSERT INTO mensaje (id_usuario, titulo, contenido)
+            VALUES (:idUsuario, :titulo, :contenido)
+        ");
+                    $stmtMsg->bindParam(":idUsuario", $idProfesor, PDO::PARAM_INT);
+                    $stmtMsg->bindParam(":titulo", $titulo, PDO::PARAM_STR);
+                    $stmtMsg->bindParam(":contenido", $contenido, PDO::PARAM_STR);
+
+                    if ($stmtMsg->execute()) {
+                        echo "__POPUP__";
+                    }
+                }
             }
+
+            if ($success && $idProfesor === null) {
+                // ✅ Cancelación realizada por superusuario
+                $reserva = $this->porId($idReservacion);
+                if ($reserva !== null) {
+                    $fecha = date("d/m/Y", strtotime($reserva->getReseFecha()));
+                    $horaIni = $reserva->getHoraIni();
+                    $horaFin = $reserva->getHoraFin();
+                    $idLab = $reserva->getReseIdLaboratorio();
+                    $idGrupo = $reserva->getReseIdGrupo();
+                    $idUsuarioDestino = $reserva->getReseReservadoPor();
+
+                    // 🔹 Obtener clave del laboratorio
+                    $stmtLab = $connExterna->prepare("SELECT salo_clave FROM salon WHERE salo_id_salon = :id");
+                    $stmtLab->bindParam(":id", $idLab, PDO::PARAM_INT);
+                    $stmtLab->execute();
+                    $nombreLab = $stmtLab->fetchColumn() ?: "Laboratorio $idLab";
+
+                    // 🔹 Obtener clave del grupo
+                    $stmtGrupo = $connExterna->prepare("SELECT grup_clave FROM grupo WHERE grup_id_grupo = :id");
+                    $stmtGrupo->bindParam(":id", $idGrupo, PDO::PARAM_INT);
+                    $stmtGrupo->execute();
+                    $nombreGrupo = $stmtGrupo->fetchColumn() ?: "Grupo $idGrupo";
+
+                    // 🔹 Formatear hora
+                    $horaIniFmt = substr($horaIni, 0, 2) . ":" . substr($horaIni, 2, 2);
+                    $horaFinFmt = substr($horaFin, 0, 2) . ":" . substr($horaFin, 2, 2);
+
+                    // 🔹 Mensaje para cancelación por superusuario
+                    $titulo = "Reservación cancelada por administración";
+                    $contenido = "Un superusuario canceló la reservación del grupo $nombreGrupo en el laboratorio $nombreLab para el día $fecha de $horaIniFmt a $horaFinFmt.";
+
+                    $stmtMsg = $conn->prepare("
+            INSERT INTO mensaje (id_usuario, titulo, contenido)
+            VALUES (:idUsuario, :titulo, :contenido)
+        ");
+                    $stmtMsg->bindParam(":idUsuario", $idUsuarioDestino, PDO::PARAM_INT);
+                    $stmtMsg->bindParam(":titulo", $titulo, PDO::PARAM_STR);
+                    $stmtMsg->bindParam(":contenido", $contenido, PDO::PARAM_STR);
+
+                    if ($stmtMsg->execute()) {
+                        echo "__POPUP__";
+                    }
+                }
+            }
+
+
 
             return $success;
         } catch (Exception $e) {
@@ -410,7 +500,7 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
             throw $e;
         }
     }
-	
+
     public function listadoPorFecha(array $fechas): array
     {
         try {
@@ -855,10 +945,4 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
             @file_put_contents($logPath, "$timestamp $mensaje\n", FILE_APPEND);
         }
     }
-
-
-
-
-
-
 }
