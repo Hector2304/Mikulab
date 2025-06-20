@@ -554,6 +554,7 @@ export default {
         for (let id in response.data) {
           hrsNoDisp[id] = new Set();
           for (let horario of response.data[id]) {
+			  if (horario.status !== 'A') continue;
             const ini = Number(horario.horaIni) / 100;
             const fin = Number(horario.horaFin) / 100;
             for (let i = ini; i < fin; i++) hrsNoDisp[id].add(i);

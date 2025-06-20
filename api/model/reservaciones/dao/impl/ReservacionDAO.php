@@ -353,7 +353,8 @@ class ReservacionDAO extends AbstractDAO implements IReservacionDAO
 				FROM reservacion r
 				JOIN horario h ON r.rese_id_horario = h.hora_id_horario
 				WHERE r.rese_id_laboratorio IN (" . $in . ")
-				AND r.rese_fecha = ?");
+				AND r.rese_fecha = ?
+                AND r.rese_status = 'A'");
 
             $param = 0;
 
