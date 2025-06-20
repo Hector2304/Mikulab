@@ -1,0 +1,134 @@
+/**
+ * https://bootstrap-vue.org/docs/reference/theming
+ * https://bootstrap-vue.org/docs/reference/color-variants
+ */
+
+$primary: #003d79 !default;
+$warning: #d59f0f !default;
+$info: #007bff !default;
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+
+.text-small {
+	font-size: 0.85rem;
+}
+
+.text-smaller {
+	font-size: 0.70rem;
+}
+
+.text-half-small {
+	font-size: 0.55rem;
+}
+
+.text-noselect {
+	user-select: none;
+}
+
+body {
+	background-color: #fafafa;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.d-table-inner-div-height-fix > div:nth-of-type(1) {
+	height: 100% !important;
+}
+.d-table-inner-div-height-fix {
+	height: 1px !important;
+}
+
+.bg-disabled-light {
+	background: repeating-linear-gradient(
+		-45deg,
+		#fbfbfc,
+		#fbfbfc 5px,
+		#fdfdfd 5px,
+		#fdfdfd 10px
+	);
+}
+
+.bg-disabled {
+	background: repeating-linear-gradient(
+		-45deg,
+		#fafafa,
+		#fafafa 5px,
+		#f4f4f4 5px,
+		#f4f4f4 10px
+	);
+}
+
+.bg-disabled-group-light {
+	background: repeating-linear-gradient(
+		-45deg,
+		#eef2f6,
+		#eef2f6 5px,
+		#f4f6f8 5px,
+		#f4f6f8 10px
+	);
+}
+
+.bg-disabled-group {
+	background: repeating-linear-gradient(
+		-45deg,
+		#dee6ee,
+		#dee6ee 5px,
+		#e9eef3 5px,
+		#e9eef3 10px
+	);
+}
+
+.bg-disabled-reserved-light {
+	background: repeating-linear-gradient(
+		-45deg,
+		#ebf3f2,
+		#ebf3f2 5px,
+		#f0f5f5 5px,
+		#f0f5f5 10px
+	);
+}
+
+.bg-disabled-reserved {
+	background: repeating-linear-gradient(
+		-45deg,
+		#d7e7e5,
+		#d7e7e5 5px,
+		#e1edec 5px,
+		#e1edec 10px
+	);
+}
+
+.bg-disabled-external-light {
+	background: repeating-linear-gradient(
+		-45deg,
+		#f8f4e8,
+		#f8f4e8 5px,
+		#f9f5ec 5px,
+		#f9f5ec 10px
+	);
+}
+
+.bg-disabled-external {
+	background: repeating-linear-gradient(
+		-45deg,
+		#f2ead2,
+		#f2ead2 5px,
+		#f4edd9 5px,
+		#f4edd9 10px
+	);
+}
+
+.border-dashed {
+	border-style: dashed !important;
+}
+
+.text-muted-disabled {
+	color: #c6cbce !important
+}
+
+.border-disabled {
+	border-color: #f3f4f6 !important
+}
