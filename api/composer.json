@@ -1,0 +1,17 @@
+{
+    "name": "hctorsilva/api",
+    "autoload": {
+        "psr-4": {
+            "Hctorsilva\\Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hector2304",
+            "email": "hectorsilva0423@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.4"
+    }
+}
